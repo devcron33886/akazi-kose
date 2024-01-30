@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdvertController;
+use App\Http\Controllers\EmployerIndexController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShowEmployerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/employers', EmployerIndexController::class)->name('employers');
+Route::get('/employer/{employer:slug}', ShowEmployerController::class)->name('employers.show');
+
+Route::get('/job/{job:slug}', AdvertController::class)->name('adverts.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,4 +36,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

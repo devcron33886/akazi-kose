@@ -9,8 +9,7 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.bunny.net/css?family=be-vietnam-pro:400,500,600,700" rel="stylesheet" />
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -18,7 +17,7 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-white dark:bg-gray-900">
-
+        <x-menu-component />
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
@@ -46,33 +45,23 @@
                     <div class="py-6">
                         <div :class="{ '!block': activeTab === 0 }"
                             x-show.transition.in.opacity.duration.600="activeTab === 0" class="hidden">
-                            <div class="border rounded-md shadow-sm p-6 dark:bg-gray-900 dark:border-slate-700">
-                                <h1 class="text-3xl font-bold text-black dark:text-gray-100">Welcome to Laravel!</h1>
-                            </div>
+                            <x-job-component />
                         </div>
                         <div :class="{ '!block': activeTab === 1 }"
                             x-show.transition.in.opacity.duration.600="activeTab === 1" class="hidden">
-                            <div class="border rounded-xl shadow-sm p-6 dark:bg-gray-900 dark:border-slate-700">
-                                <h1 class="text-3xl font-bold text-black dark:text-gray-100">Welcome to Laravel!</h1>
-                            </div>
+                            <x-tender-component />
                         </div>
                         <div :class="{ '!block': activeTab === 2 }"
                             x-show.transition.in.opacity.duration.600="activeTab === 2" class="hidden">
-                            <div class="border rounded-xl shadow-sm p-6 dark:bg-gray-900 dark:border-slate-700">
-                                <h1 class="text-3xl font-bold text-black dark:text-gray-100">Welcome to Laravel!</h1>
-                            </div>
+                            <x-consultancy-component />
                         </div>
                         <div :class="{ '!block': activeTab === 3 }"
                             x-show.transition.in.opacity.duration.600="activeTab === 3" class="hidden">
-                            <div class="border rounded-xl shadow-sm p-6 dark:bg-gray-900 dark:border-slate-700">
-                                <h1 class="text-3xl font-bold text-black dark:text-gray-100">Welcome to Ruby!</h1>
-                            </div>
+                            <x-internship-component />
                         </div>
                         <div :class="{ '!block': activeTab === 4 }"
                             x-show.transition.in.opacity.duration.600="activeTab === 4" class="hidden">
-                            <div class="border rounded-xl shadow-sm p-6 dark:bg-gray-900 dark:border-slate-700">
-                                <h1 class="text-3xl font-bold text-black dark:text-gray-100">Welcome to Laravel!</h1>
-                            </div>
+                            <x-other-component />
                         </div>
                     </div>
                 </div>
