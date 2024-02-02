@@ -50,7 +50,8 @@ class AdvertResource extends Resource
                 Forms\Components\TextInput::make('number_of_positions')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('files'),
+                Forms\Components\FileUpload::make('files')
+                ->multiple(),
             ]);
     }
 

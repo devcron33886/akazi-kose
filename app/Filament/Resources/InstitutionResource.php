@@ -25,9 +25,8 @@ class InstitutionResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required(),
-                Forms\Components\TextInput::make('slug')
+                Forms\Components\FileUpload::make('logo')
                     ->required(),
-                Forms\Components\TextInput::make('logo'),
                 Forms\Components\Textarea::make('about')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('phone_number')
@@ -49,8 +48,7 @@ class InstitutionResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
+               
                 Tables\Columns\TextColumn::make('logo')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('phone_number')

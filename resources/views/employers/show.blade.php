@@ -17,6 +17,7 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-white dark:bg-gray-900">
+        <x-menu-component />
         <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
             <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
                 aria-hidden="true">
@@ -34,7 +35,7 @@
                 <div class="lg:flex lg:items-center lg:justify-between">
                     <div class="min-w-0 flex-1">
                         <h1 class="text-2xl font-bold leading-7 text-white sm:truncate sm:text-3xl sm:tracking-tight">
-                            {{ $institution->title }}
+                            {{ $institution->name }}
                         </h1>
                     </div>
 
@@ -70,9 +71,11 @@
                                 <div class="mt-6 flex border-t border-gray-900/5 pt-6">
                                     <div class="relative flex items-center gap-x-4">
                                         <a href="#"
-                                            class="relative z-10 rounded-full bg-gray-300 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
+                                            class="relative z-10 rounded-full bg-gray-300 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{ $advert->location }}</a>
                                         <a href="#"
-                                            class="relative z-10 rounded-full bg-blue-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
+                                            class="relative z-10 rounded-full bg-blue-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{ $advert->deadline }}</a>
+                                        <a href="#"
+                                            class="relative z-10 rounded-full bg-blue-200 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{ $advert->contract_type }}</a>
                                     </div>
                                 </div>
                             </div>

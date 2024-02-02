@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Home-{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,8 +19,9 @@
         <x-menu-component />
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <livewire:search />
 
-                <div x-data="{ activeTab: 0 }">
+                <div x-data="{ activeTab: 0 }" class="mt-12">
                     <div class="overflow-hidden rounded-md border border-gray-100 bg-gray-50 p-1">
                         <ul class="flex items-center gap-2 text-sm font-medium">
                             @foreach ($categories as $category)

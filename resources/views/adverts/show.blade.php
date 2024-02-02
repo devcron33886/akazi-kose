@@ -46,8 +46,41 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white dark:bg-gray-800 overflow-hidden ">
-                    {!! $advert->body !!}
+                <div class="container mx-auto flex flex-wrap py-6">
+
+                    <!-- Posts Section -->
+                    <section class="w-full md:w-2/3 flex flex-col items-center px-3">
+
+                        <article class="flex flex-col shadow my-4">
+                            <div class="bg-white flex flex-col justify-start p-6">
+
+
+                                <p " class="pb-6">{!! $advert->body !!}</p>
+                                
+                            </div>
+                        </article>
+                    </section>
+
+                    <!-- Sidebar Section -->
+                    <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
+
+                        <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                            <p class="text-xl font-semibold pb-5">JOB SUMMARY</p>
+                            <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis
+                                est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea
+                                dictumst.</p>
+                            
+                        </div>
+                        <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                            <p class="text-xl font-semibold pb-5">Related JOBS</p>
+                            <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis
+                                est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea
+                                dictumst.</p>
+                            
+                        </div>
+
+                    </aside>
+
                 </div>
             </div>
         </div>
