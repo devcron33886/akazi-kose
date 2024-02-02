@@ -17,6 +17,7 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-white dark:bg-gray-900">
+        <x-menu-component />
         <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
             <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
                 aria-hidden="true">
@@ -49,11 +50,14 @@
                 <div role="list" class="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
                     @foreach ($instutions as $instution)
                         <div class="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow">
-                            <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-                                class="aspect-video w-full object-cover" alt="" />
+                            <a href="{{ route('employers.show', $instution) }}">
+                                <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+                                    class="aspect-video w-full object-cover" alt="" />
+                            </a>
                             <div class="p-4">
 
-                                <h3 class="text-xl font-medium text-gray-900">{{ $instution->name }}</h3>
+                                <a href="{{ route('employers.show', $instution) }}"
+                                    class="text-xl font-medium text-gray-900">{{ $instution->name }}</a>
 
                                 <div class="mt-4 flex gap-2">
                                     <a href="{{ route('employers.show', $instution) }}">
