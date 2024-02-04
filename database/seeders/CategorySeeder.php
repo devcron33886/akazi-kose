@@ -34,8 +34,8 @@ class CategorySeeder extends Seeder
                 'visible' => true,
             ],
             [
-                'name' => 'Freelancing',
-                'slug' => 'freelancing',
+                'name' => 'Public',
+                'slug' => 'Public',
                 'visible' => true,
             ],
             [
