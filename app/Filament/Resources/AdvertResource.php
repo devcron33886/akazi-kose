@@ -10,6 +10,8 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use FilamentTiptapEditor\Enums\TiptapOutput;
+use FilamentTiptapEditor\TiptapEditor;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -33,9 +35,17 @@ class AdvertResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('slug')
                     ->required(),
-                Forms\Components\Textarea::make('body')
+                TiptapEditor::make('body')
                     ->required()
-                    ->columnSpanFull(),
+                    ->profile('default|simple|minimal|none|custom')
+                    ->tools([]) // individual tools to use in the editor, overwrites profile
+                    ->disk('string') // optional, defaults to config setting
+                    ->directory('string or Closure returning a string') // optional, defaults to config setting
+                    ->acceptedFileTypes(['array of file types']) // optional, defaults to config setting
+                    ->maxFileSize('integer in KB') // optional, defaults to config setting
+                    ->output(TiptapOutput::Html) // optional, change the format for saved data, default is html
+                    ->maxContentWidth('5xl')
+                    ->required(),
                 Forms\Components\DatePicker::make('deadline')
                     ->required(),
                 Forms\Components\Toggle::make('visible')
@@ -51,7 +61,7 @@ class AdvertResource extends Resource
                     ->required()
                     ->numeric(),
                 Forms\Components\FileUpload::make('files')
-                ->multiple(),
+                    ->multiple(),
             ]);
     }
 

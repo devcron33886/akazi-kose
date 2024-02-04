@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -26,12 +27,19 @@ class Advert extends Model
 
     public function sluggable(): array
     {
-        return[
-            'slug'=>[
-                'source'=>'title'
+        return [
+            'slug' => [
+                'source' => 'title'
             ],
         ];
     }
 
-
+    public function getFormattedDateAttribute()
+    {
+        return $this->created_at->format('d-m-Y');
+    }
+    public function getFormattedDeadlineAttribute()
+    {
+        return Carbon::parse($this->attributes['deadline'])->format('d-m-Y');
+    }
 }

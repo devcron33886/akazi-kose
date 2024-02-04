@@ -13,7 +13,19 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->string('website_title');
+            $table->string('logo')->nullable();
+            $table->string('phone');
+            $table->string('whatsapp');
+            $table->string('address');
+            $table->string('email');
+            $table->string('twitter');
+            $table->string('instagram');
+            $table->string('facebook');
+            $table->string('linkedin');
+            $table->longText('about');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
