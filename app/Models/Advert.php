@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Advert extends Model
 {
-    use HasFactory, SoftDeletes, Sluggable;
+    use HasFactory, Sluggable, SoftDeletes;
 
     protected $guarded = [];
 
@@ -29,7 +29,7 @@ class Advert extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'title',
             ],
         ];
     }
@@ -38,6 +38,7 @@ class Advert extends Model
     {
         return $this->created_at->format('d-m-Y');
     }
+
     public function getFormattedDeadlineAttribute()
     {
         return Carbon::parse($this->attributes['deadline'])->format('d-m-Y');

@@ -15,6 +15,7 @@ class ShowEmployerController extends Controller
         $institution = Institution::where('slug', $slug)->firstOrFail();
         $query = $institution->adverts();
         $adverts = $query->paginate(15);
+
         return view('employers.show', compact('institution', 'adverts'));
     }
 }

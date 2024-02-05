@@ -23,8 +23,9 @@ class ConsultancyComponent extends Component
     public function render(): View|Closure|string
     {
         $adverts = Advert::where('category_id', 3)->orderBy('created_at', 'desc')->get();
-        return view('components.consultancy-component',[
-            'adverts' => $adverts
+
+        return view('components.consultancy-component', [
+            'adverts' => $adverts,
         ]);
     }
 }

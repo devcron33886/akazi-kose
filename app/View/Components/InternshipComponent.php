@@ -22,6 +22,7 @@ class InternshipComponent extends Component
     public function render(): View|Closure|string
     {
         $adverts = \App\Models\Advert::where('category_id', 4)->orderBy('created_at', 'desc')->get();
+
         return view('components.internship-component', ['adverts' => $adverts]);
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class UsersSeeder extends Seeder
@@ -12,7 +11,7 @@ class UsersSeeder extends Seeder
      */
     public function run(): void
     {
-        $users=[
+        $users = [
             [
                 'name' => 'Admin',
                 'email' => 'admin@admin.com',
@@ -22,6 +21,6 @@ class UsersSeeder extends Seeder
         foreach ($users as $user) {
             \App\Models\User::create($user);
         }
-        
+
     }
 }

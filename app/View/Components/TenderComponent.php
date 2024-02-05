@@ -21,7 +21,8 @@ class TenderComponent extends Component
      */
     public function render(): View|Closure|string
     {
-        $adverts=\App\Models\Advert::where('category_id', 2)->orderBy('created_at', 'desc')->get();
-        return view('components.tender-component',['adverts' => $adverts]);
+        $adverts = \App\Models\Advert::where('category_id', 2)->orderBy('created_at', 'desc')->get();
+
+        return view('components.tender-component', ['adverts' => $adverts]);
     }
 }

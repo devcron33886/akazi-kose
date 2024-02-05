@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Setting;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SettingSeeder extends Seeder
@@ -26,7 +25,7 @@ class SettingSeeder extends Seeder
                 'linkedin' => 'https://linkedin/akazi-kose',
                 'about' => 'Akazi kose is job, tender and other realted advert site',
 
-            ]
+            ],
 
         ];
         Setting::insert($settings);

@@ -22,6 +22,7 @@ class OtherComponent extends Component
     public function render(): View|Closure|string
     {
         $adverts = \App\Models\Advert::where('category_id', 6)->orderBy('created_at', 'desc')->get();
+
         return view('components.other-component', ['adverts' => $adverts]);
     }
 }

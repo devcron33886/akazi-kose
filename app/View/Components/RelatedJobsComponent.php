@@ -7,14 +7,17 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class JobComponent extends Component
+class RelatedJobsComponent extends Component
 {
+    public $advertId;
+    public $relatedAdverts;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($advertId)
     {
-        //
+        $this->advertId = $advertId;
     }
 
     /**
@@ -22,8 +25,7 @@ class JobComponent extends Component
      */
     public function render(): View|Closure|string
     {
-        $adverts = Advert::where('category_id', 1)->get();
-
-        return view('components.job-component', ['adverts' => $adverts]);
+        $this->relatedAdverts = Advert::where('category_id', '=', $this->advertId)->limit(3)->get();
+        return view('components.related-jobs-component');
     }
 }

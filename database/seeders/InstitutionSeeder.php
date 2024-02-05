@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Institution;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class InstitutionSeeder extends Seeder
@@ -21,7 +20,7 @@ class InstitutionSeeder extends Seeder
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
                 'email' => 'P8XUe@example.com',
-                'address' => 'Kigali, Rwanda'
+                'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Higher Education',
                 'slug' => 'rwanda-ministry-of-higher-education',
@@ -29,7 +28,7 @@ class InstitutionSeeder extends Seeder
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
                 'email' => 'P8XUe@example.com',
-                'address' => 'Kigali, Rwanda'
+                'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Education',
                 'slug' => 'rwanda-ministry-of-education',
@@ -37,7 +36,7 @@ class InstitutionSeeder extends Seeder
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
                 'email' => 'P8XUe@example.com',
-                'address' => 'Kigali, Rwanda'
+                'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Health',
                 'slug' => 'rwanda-ministry-of-health',
@@ -45,7 +44,7 @@ class InstitutionSeeder extends Seeder
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
                 'email' => 'P8XUe@example.com',
-                'address' => 'Kigali, Rwanda'
+                'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Defense',
                 'slug' => 'rwanda-ministry-of-defense',
@@ -53,7 +52,7 @@ class InstitutionSeeder extends Seeder
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
                 'email' => 'P8XUe@example.com',
-                'address' => 'Kigali, Rwanda'
+                'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Finance',
                 'slug' => 'rwanda-ministry-of-finance',
@@ -61,7 +60,7 @@ class InstitutionSeeder extends Seeder
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
                 'email' => 'P8XUe@example.com',
-                'address' => 'Kigali, Rwanda'
+                'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Energy',
                 'slug' => 'rwanda-ministry-of-energy',
@@ -69,7 +68,7 @@ class InstitutionSeeder extends Seeder
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
                 'email' => 'P8XUe@example.com',
-                'address' => 'Kigali, Rwanda'
+                'address' => 'Kigali, Rwanda',
             ],
             [
                 'name' => 'Rwanda Ministry of Sport',
@@ -78,7 +77,7 @@ class InstitutionSeeder extends Seeder
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
                 'email' => 'P8XUe@example.com',
-                'address' => 'Kigali, Rwanda'
+                'address' => 'Kigali, Rwanda',
             ],
             [
                 'name' => 'Rwanda Ministry of Water',
@@ -87,7 +86,7 @@ class InstitutionSeeder extends Seeder
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
                 'email' => 'P8XUe@example.com',
-                'address' => 'Kigali, Rwanda'
+                'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Sanitation',
                 'slug' => 'rwanda-ministry-of-sanitation',
@@ -95,10 +94,8 @@ class InstitutionSeeder extends Seeder
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
                 'email' => 'P8XUe@example.com',
-                'address' => 'Kigali, Rwanda'
-            ]
-
-
+                'address' => 'Kigali, Rwanda',
+            ],
 
         ];
 

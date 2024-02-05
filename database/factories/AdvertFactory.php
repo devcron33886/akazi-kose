@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Validation\Rules\Unique;
 use Illuminate\Support\Str;
 
 /**
@@ -19,6 +18,7 @@ class AdvertFactory extends Factory
     public function definition(): array
     {
         $title = fake()->unique()->sentence(3);
+
         return [
             'category_id' => fake()->numberBetween(1, 6),
             'institution_id' => fake()->numberBetween(1, 10),

@@ -13,6 +13,7 @@ class EmployerIndexController extends Controller
     public function __invoke(Request $request)
     {
         $instutions = Institution::paginate(15);
+
         return view('employers.index', compact('instutions'));
     }
 }

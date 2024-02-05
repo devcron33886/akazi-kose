@@ -38,7 +38,6 @@
                             @endforeach
                         </ul>
                     </div>
-
                     <div class="py-6">
                         @foreach ($adverts as $advert)
                             <div class="mt-16 space-y-6 lg:mt-20 lg:space-y-20">
@@ -113,13 +112,10 @@
                         @endforeach
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
     <x-footer-component />
-
 </body>
 
 </html>

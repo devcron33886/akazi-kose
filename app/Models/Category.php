@@ -10,10 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    use HasFactory, SoftDeletes, Sluggable;
+    use HasFactory, Sluggable, SoftDeletes;
 
     protected $guarded = [];
-
 
     public function adverts(): HasMany
     {
