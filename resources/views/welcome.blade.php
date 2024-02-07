@@ -5,8 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Home-{{ config('app.name', 'Laravel') }}</title>
+    <title>Home - {{ config('app.name', 'Laravel') }}</title>
+    <meta
+        description="Akazi kose company that is located in Kigali Rwanda. It helps in finding jobs,tenders,consultancy,training and internships.">
+    <meta
+        keywords="Home,Rwanda,Kigali,akazi kose,jobs,job,online job,online jobs,jobs online,consultancy,training,training online,internships">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=be-vietnam-pro:400,500,600,700" rel="stylesheet" />
@@ -39,77 +47,34 @@
                         </ul>
                     </div>
 
-                    <div class="py-6">
+                    <div class="py-6 w-full">
                         @foreach ($adverts as $advert)
                             <div class="mt-16 space-y-6 lg:mt-20 lg:space-y-20">
-                                <article class="relative isolate flex flex-col gap-4 lg:flex-row ">
-                                    <div
-                                        class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0">
-                                        <img src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
-                                            alt="{{ $advert->title }}"
-                                            class="absolute inset-0 h-full w-full rounded-md bg-gray-50 object-cover">
 
-                                    </div>
-                                    <div>
+                                <a href="{{ route('adverts.show', $advert->slug) }}"
+                                    class="flex flex-col items-center bg-white border border-blue-600 rounded-lg shadow md:flex-row md:max-w-full">
+                                    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+                                        src="/storage/{{ $advert->institution->logo }}" alt="{{ $advert->title }}">
+                                    <div class="flex flex-col justify-between p-4 leading-normal">
+                                        <h5
+                                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                            {{ $advert->title }}</h5>
+                                        <div class="md:inline-flex sm:col-span-1 items-center gap-2">
+                                            <p class="text-blue-700">{{ $advert->institution->name }}</p>|
+                                            <p>Location: {{ $advert->location }} |</p>
+                                            <p>Published on: {{ $advert->formatted_date }} |</p>
+                                            <p>Deadline: {{ $advert->formatted_deadline }} |</p>
+                                            <p>{{ $advert->desired_experience }}</p>
 
-                                        <div class="group relative max-w-xl">
-                                            <h3
-                                                class="mt-3 text-lg font-medium leading-6 text-gray-900 group-hover:text-gray-600">
-                                                <a href="{{ route('adverts.show', $advert->slug) }}">
-                                                    <span class="absolute inset-0"></span>
-                                                    {{ $advert->title }}
-                                                </a>
-                                            </h3>
-                                            <p class="mt-5 text-sm leading-6 text-gray-600">{!! Str::limit($advert->body, 150) !!}</p>
-
-                                        </div>
-                                        <div class="mt-6 flex flex-col sm:flex-row border-t border-blue-600 pt-6">
-                                            <div class="sm:mr-4">
-                                                <p
-                                                    class="flex items-center relative z-10 rounded-md bg-blue-800 px-3 py-1.5 font-sm text-sm text-white hover:bg-blue-600">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                        class="w-5 h-5">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                                                    </svg>
-                                                    {{ $advert->institution->name }}
-                                                </p>
-                                            </div>
-
-                                            <div class="sm:mr-4 mt-4 sm:mt-0">
-                                                <p
-                                                    class="flex items-center relative z-10 rounded-md bg-green-800 px-3 py-1.5 font-sm text-sm text-white hover:bg-green-600">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                        class="w-5 h-5">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
-                                                    </svg>
-                                                    {{ $advert->formatted_date }}
-                                                </p>
-                                            </div>
-
-                                            <div class="mt-4 sm:mt-0">
-                                                <p
-                                                    class="flex items-center relative z-10 rounded-md bg-red-800 px-3 py-1.5 font-sm text-sm text-white hover:bg-red-600">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                        class="w-5 h-5">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                                    </svg>
-                                                    {{ $advert->formatted_deadline }}
-                                                </p>
-                                            </div>
                                         </div>
 
                                     </div>
-                                </article>
+                                    <div class="mt-2">
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">{{ $advert->category->name }}</span>
+                                    </div>
+                                </a>
                             </div>
-                            <hr class="mt-5 my-8 h-px border-0 bg-blue-600" />
                         @endforeach
                     </div>
                 </div>
