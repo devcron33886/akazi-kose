@@ -4,6 +4,7 @@ use App\Http\Controllers\AdvertController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmployerIndexController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowEmployerController;
 use App\Http\Controllers\WelcomeController;
@@ -27,6 +28,7 @@ Route::get('/employer/{employer:slug}', ShowEmployerController::class)->name('em
 Route::get('/job/{job:slug}', AdvertController::class)->name('adverts.show');
 Route::get('/jobs/{category:slug}', CategoryController::class)->name('category.show');
 Route::get('/contact-us', ContactController::class)->name('contact.index');
+Route::get('/faqs', FaqController::class)->name('faqs');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,4 +40,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

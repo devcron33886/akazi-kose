@@ -21,6 +21,11 @@
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link :href="route('faqs')" :active="request()->routeIs('faqs')" wire:navigate>
+                            {{ __('Faqs') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                         <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')" wire:navigate>
                             {{ __('Contact us') }}
                         </x-nav-link>
