@@ -49,34 +49,23 @@
 
                 <div role="list" class="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
                     @foreach ($instutions as $instution)
-                        <div class="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow">
-                            <a href="{{ route('employers.show', $instution) }}">
-                                <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-                                    class="aspect-video w-full object-cover" alt="" />
-                            </a>
-                            <div class="p-4">
+                        <a href="{{ route('employers.show', $instution->slug) }}"
+                            class="flex flex-col items-center bg-white border border-blue-600 rounded-lg shadow md:flex-row md:max-w-xl">
+                            <img class="object-cover w-full rounded-t-lg h-86 md:h-auto md:w-40 md:rounded-none md:rounded-s-lg"
+                                src="storage/{{ $instution->logo }}" alt="{{ $instution->name }}">
+                            <div class="flex flex-col justify-between p-4 leading-normal">
+                                <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
+                                    {{ $instution->name }}</h5>
 
-                                <a href="{{ route('employers.show', $instution) }}"
-                                    class="text-xl font-medium text-gray-900">{{ $instution->name }}</a>
-
-                                <div class="mt-4 flex gap-2">
-                                    <a href="{{ route('employers.show', $instution) }}">
-                                        <span
-                                            class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600">
-                                            {{ $instution->adverts->count() }} Job Offers
-                                        </span>
-                                    </a>
-
-
-                                </div>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
                 {{ $instutions->links() }}
             </div>
         </div>
     </div>
+    <x-footer-component />
 
 </body>
 
