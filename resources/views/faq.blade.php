@@ -34,14 +34,17 @@
                     <!-- Posts Section -->
                     <section class="w-full md:w-2/3 flex flex-col items-center px-3">
 
-                        <article class="flex flex-col shadow-sm my-4">
-                            <div class="bg-white flex flex-col rounded-md justify-start p-6">
+                        @foreach($faqs as $faq)
+                            <div class="mt-2">
 
+                                <div  class="block max-w-sm p-6 bg-white border border-blue-600 rounded-lg md:max-w-4xl">
 
-
-
+                                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $faq->title}}</h5>
+                                <p class="font-normal text-gray-700 dark:text-gray-400">{{ $faq->description }}</p>
+                                </div>
                             </div>
-                        </article>
+
+                        @endforeach
                     </section>
 
                     <!-- Sidebar Section -->
@@ -51,15 +54,30 @@
                             <p class="text-xl font-semibold capitalize pb-5">
                                 Subscribe to our Newsletter
                             </p>
-                            <div class="overflow-hidden rounded-md bg-white shadow">
+                            
+                            <form action="" method="POST" autocomplete="off">
+                                @csrf
+                                <div>
+                                    <x-input-label class="required" for="name" :value="__('Name')" />
+                                    <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="off" />
+                                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                                </div>
 
-                            </div>
+                                <!-- Email Address -->
+                                <div class="mt-4">
+                                    <x-input-label class="required" for="email" :value="__('Email')" />
+                                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="off" />
+                                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                </div>
+                            </form>
+                            
                         </div>
                     </aside>
                 </div>
             </div>
         </div>
     </div>
+    <x-footer-component/>
 </body>
 
 </html>
