@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\AdvertScope;
 use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -42,5 +43,10 @@ class Advert extends Model
     public function getFormattedDeadlineAttribute()
     {
         return Carbon::parse($this->attributes['deadline'])->format('d-m-Y');
+    }
+
+    public static function booted():void
+    {
+        static::addGlobalScope(new AdvertScope);
     }
 }

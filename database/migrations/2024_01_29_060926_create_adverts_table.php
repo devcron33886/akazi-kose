@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->longText('body');
             $table->date('deadline');
-            $table->boolean('visible')->default(true);
+            $table->string('status')->default('draft');
             $table->string('location');
             $table->string('sector');
             $table->string('eductaion_level')->nullable();

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\FaqStatus;
 use App\Filament\Resources\FaqResource\Pages;
 use App\Filament\Resources\FaqResource\RelationManagers;
 use App\Models\Faq;
@@ -23,13 +24,19 @@ class FaqResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required(),
-                Forms\Components\Textarea::make('description')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Toggle::make('is_active')
-                    ->required(),
+                Forms\Components\Section::make('Faq Details')
+                    ->schema([
+                        Forms\Components\TextInput::make('title')
+                            ->required(),
+                        Forms\Components\MarkdownEditor::make('description')
+                            ->required()
+                            ->columnSpanFull(),
+                        Forms\Components\ToggleButtons::make('status')
+                        ->inline()
+                        ->options(FaqStatus::class)
+                        ->required(),
+                    ])
+
             ]);
     }
 
