@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\FaqScope;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -20,5 +21,10 @@ class Faq extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public static function booted():void
+    {
+        static::addGlobalScope(new FaqScope);
     }
 }

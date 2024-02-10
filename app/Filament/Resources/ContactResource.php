@@ -2,17 +2,20 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\InstitutionResource\Pages;
-use App\Models\Institution;
+use App\Filament\Resources\ContactResource\Pages;
+use App\Filament\Resources\ContactResource\RelationManagers;
+use App\Models\Contact;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class InstitutionResource extends Resource
+class ContactResource extends Resource
 {
-    protected static ?string $model = Institution::class;
+    protected static ?string $model = Contact::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -22,20 +25,14 @@ class InstitutionResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required(),
-                Forms\Components\FileUpload::make('logo')
-                    ->required(),
-                Forms\Components\Textarea::make('about')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('phone_number')
-                    ->tel()
-                    ->required(),
-                Forms\Components\TextInput::make('second_phone_number')
-                    ->tel(),
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required(),
-                Forms\Components\TextInput::make('address')
+                Forms\Components\TextInput::make('phone')
+                    ->tel()
                     ->required(),
+                Forms\Components\Textarea::make('message')
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -45,9 +42,9 @@ class InstitutionResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('phone_number')
+                Tables\Columns\TextColumn::make('email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('address')
+                Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -67,7 +64,6 @@ class InstitutionResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -86,9 +82,9 @@ class InstitutionResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListInstitutions::route('/'),
-            'create' => Pages\CreateInstitution::route('/create'),
-            'edit' => Pages\EditInstitution::route('/{record}/edit'),
+            'index' => Pages\ListContacts::route('/'),
+            'create' => Pages\CreateContact::route('/create'),
+            'edit' => Pages\EditContact::route('/{record}/edit'),
         ];
     }
 }
