@@ -18,7 +18,7 @@ class FaqResource extends Resource
 {
     protected static ?string $model = Faq::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-m-bookmark';
 
     public static function form(Form $form): Form
     {
@@ -32,9 +32,9 @@ class FaqResource extends Resource
                             ->required()
                             ->columnSpanFull(),
                         Forms\Components\ToggleButtons::make('status')
-                        ->inline()
-                        ->options(FaqStatus::class)
-                        ->required(),
+                            ->inline()
+                            ->options(FaqStatus::class)
+                            ->required(),
                     ])
 
             ]);

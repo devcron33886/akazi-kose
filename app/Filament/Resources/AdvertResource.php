@@ -17,7 +17,7 @@ class AdvertResource extends Resource
 {
     protected static ?string $model = Advert::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-c-computer-desktop';
 
     public static function form(Form $form): Form
     {
@@ -110,6 +110,8 @@ class AdvertResource extends Resource
                 ->relationship('category', 'name')
                 ->required(),
             Forms\Components\Select::make('institution_id')
+                ->native(false)
+                ->searchable()
                 ->relationship('institution', 'name')
 
                 ->required(),

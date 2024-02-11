@@ -26,7 +26,7 @@ class AdvertFactory extends Factory
             'slug' => Str::slug($title),
             'body' => fake()->paragraph(5),
             'deadline' => now()->addDays(30),
-            'visible' => true,
+            'status' => fake()->randomElement(['active', 'expired', 'draft']),
             'location' => fake()->city(),
             'sector' => fake()->word(),
             'eductaion_level' => fake()->randomElement(['Diploma', 'Bachelor', 'Master', 'Doctorate']),

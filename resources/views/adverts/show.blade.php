@@ -77,25 +77,25 @@
                             <div class="overflow-hidden rounded-md bg-white shadow">
                                 <ul role="list" class="divide-y divide-gray-200">
                                   <li class="px-6 py-4">
-                                   {{ $advert->location }}
+                                    Location: {{ $advert->location }}
                                   </li>
                                   <li class="px-6 py-4">
-                                    {{ $advert->sector }}
+                                    Sector: {{ $advert->sector }}
                                    </li>
                                    <li class="px-6 py-4">
-                                    {{ $advert->eductaion_level }}
+                                   Education level: {{ $advert->eductaion_level }}
                                    </li>
                                    <li class="px-6 py-4">
-                                    {{ $advert->desired_experience }}
+                                   Experience: {{ $advert->desired_experience }}
                                    </li>
                                    <li class="px-6 py-4">
-                                    {{ $advert->institution->email }}
+                                    Email: {{ $advert->institution->email }}
                                    </li>
                                    <li class="px-6 py-4">
-                                    {{ $advert->contract_type }}
+                                    Contract Type: {{ $advert->contract_type }}
                                    </li>
                                    <li class="px-6 py-4">
-                                    {{ $advert->number_of_positions }}
+                                    Available positions: {{ $advert->number_of_positions }}
                                    </li>
                                 </ul>
                             </div>
@@ -115,5 +115,6 @@
             </div>
         </div>
     </div>
+    <x-footer-component/>
 </body>
 </html>

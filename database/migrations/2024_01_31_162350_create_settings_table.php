@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('facebook');
             $table->string('linkedin');
             $table->longText('about');
+            $table->longText('terms_and_conditions');
+            $table->longText('privacy_and_policy');
             $table->timestamps();
             $table->softDeletes();
         });

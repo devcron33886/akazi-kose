@@ -17,7 +17,7 @@ class SettingResource extends Resource
 {
     protected static ?string $model = Setting::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-cog';
 
     public static function form(Form $form): Form
     {
@@ -44,7 +44,13 @@ class SettingResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('linkedin')
                     ->required(),
-                Forms\Components\Textarea::make('about')
+                Forms\Components\MarkdownEditor::make('about')
+                    ->required()
+                    ->columnSpanFull(),
+                Forms\Components\MarkdownEditor::make('terms_and_conditions')
+                    ->required()
+                    ->columnSpanFull(),
+                Forms\Components\MarkdownEditor::make('privacy_and_policy')
                     ->required()
                     ->columnSpanFull(),
             ]);
