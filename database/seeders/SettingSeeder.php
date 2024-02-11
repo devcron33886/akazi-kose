@@ -24,6 +24,8 @@ class SettingSeeder extends Seeder
                 'facebook' => 'https://facebook.com/akazi-kose',
                 'linkedin' => 'https://linkedin/akazi-kose',
                 'about' => 'Akazi kose is job, tender and other realted advert site',
+                'terms_and_conditions'=>'Terms and condition goes here',
+                'privacy_and_policy'=>'Privacy and policy goes here',
 
             ],
 

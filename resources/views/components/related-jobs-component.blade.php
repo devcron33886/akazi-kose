@@ -2,8 +2,7 @@
     <div class="min-w-0">
         @foreach ($relatedAdverts as $advert)
             <div class="flex items-start gap-x-3 mt-5">
-                <img class="h-12 w-12 flex-none rounded-full bg-gray-50"
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="/storage/{{ $advert->institution->logo }}"
                     alt="">
                 <p class="text-sm font-semibold leading-6 text-gray-900">{{ $advert->institution->name }}</p>
                 <p
@@ -12,9 +11,9 @@
             </div>
             <div class="mt-1 flex items-center gap-x-2 text-xs leading-5 text-gray-500">
                 <p class="whitespace-nowrap">Deadline on
-                    <time datetime="{{ $advert->deadline }}">{{ $advert->dead_line }}</time>
+                    <time datetime="{{ $advert->formatted_deadline }}">{{ $advert->formatted_deadline }}</time>
                 </p>.
-                <p class="truncate"> by {{ $advert->institution->name }}</p>
+                <p class="truncate"> {{ $advert->institution->name }}</p>
             </div>
         @endforeach
 

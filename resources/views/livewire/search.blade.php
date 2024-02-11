@@ -16,7 +16,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </div>
-                <input wire:model.live.throttle.150ms="search" id="searchInput" @keydown.slash.window="searchJobs"
+                <input wire:model.live="search" id="searchInput" @keydown.slash.window="searchJobs"
                     class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-blue-900 ring-1 ring-inset ring-blue-500 placeholder:text-blue-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
                     placeholder="Start typing" type="search" autocomplete="off">
                 <div class="absolute mt-2 w-full overflow-hidden rounded-md bg-blue-100">
