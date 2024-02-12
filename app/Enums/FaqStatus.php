@@ -1,13 +1,14 @@
 <?php
+
 namespace App\enums;
 
 use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
 
-enum FaqStatus: string implements HasColor,HasIcon,HasLabel
+enum FaqStatus: string implements HasColor, HasIcon, HasLabel
 {
-    case NotActive='not-active';
+    case NotActive = 'not-active';
     case Draft = 'draft';
     case Published = 'published';
 
@@ -19,6 +20,7 @@ enum FaqStatus: string implements HasColor,HasIcon,HasLabel
             self::Published => 'Published',
         };
     }
+
     public function getColor(): string|array|null
     {
         return match ($this) {
@@ -36,5 +38,4 @@ enum FaqStatus: string implements HasColor,HasIcon,HasLabel
             self::Published => 'heroicon-o-check-circle',
         };
     }
-
 }

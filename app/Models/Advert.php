@@ -45,7 +45,7 @@ class Advert extends Model
         return Carbon::parse($this->attributes['deadline'])->format('d-m-Y');
     }
 
-    public static function booted():void
+    public static function booted(): void
     {
         static::addGlobalScope(new AdvertScope);
     }

@@ -19,12 +19,9 @@
     <div class="min-h-screen bg-white dark:bg-gray-900">
         <x-menu-component />
         <main class="isolate py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <livewire:search />
-            </div>
             <!-- Hero section -->
             <div class="relative isolate -z-10">
-                <svg class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+                <svg class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-blue-400 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
                     aria-hidden="true">
                     <defs>
                         <pattern id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84" width="200" height="200" x="50%" y="-1"

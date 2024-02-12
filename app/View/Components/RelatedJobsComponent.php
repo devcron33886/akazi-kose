@@ -10,6 +10,7 @@ use Illuminate\View\Component;
 class RelatedJobsComponent extends Component
 {
     public $advertId;
+
     public $relatedAdverts;
 
     /**
@@ -26,6 +27,7 @@ class RelatedJobsComponent extends Component
     public function render(): View|Closure|string
     {
         $this->relatedAdverts = Advert::where('category_id', '=', $this->advertId)->limit(3)->get();
+
         return view('components.related-jobs-component');
     }
 }

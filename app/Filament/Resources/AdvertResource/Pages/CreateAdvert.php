@@ -13,6 +13,7 @@ use Filament\Resources\Pages\CreateRecord\Concerns\HasWizard;
 class CreateAdvert extends CreateRecord
 {
     use HasWizard;
+
     protected static string $resource = AdvertResource::class;
 
     public function form(Form $form): Form

@@ -32,7 +32,7 @@ class AdvertResource extends Resource
                             ->schema(static::getAdvertDetailsForm())
                             ->columns(2),
 
-                    ])
+                    ]),
             ]);
     }
 
@@ -130,6 +130,7 @@ class AdvertResource extends Resource
 
         ];
     }
+
     public static function getAdvertDetailsForm(): array
     {
         return [

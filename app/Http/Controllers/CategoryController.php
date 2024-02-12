@@ -13,9 +13,9 @@ class CategoryController extends Controller
     public function __invoke($slug)
     {
         $category = Category::where('slug', $slug)->firstOrFail();
-        $query=$category->adverts();
+        $query = $category->adverts();
         $adverts = $query->paginate(12);
 
-        return view('categories.show', ['category' => $category,'adverts'=>$adverts]);
+        return view('categories.show', ['category' => $category, 'adverts' => $adverts]);
     }
 }

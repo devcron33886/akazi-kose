@@ -2,38 +2,34 @@
 
 namespace App\Filament\Resources;
 
-use App\Enums\FaqStatus;
-use App\Filament\Resources\FaqResource\Pages;
-use App\Models\Faq;
+use App\Filament\Resources\SubscriberResource\Pages;
+use App\Filament\Resources\SubscriberResource\RelationManagers;
+use App\Models\Subscriber;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class FaqResource extends Resource
+class SubscriberResource extends Resource
 {
-    protected static ?string $model = Faq::class;
+    protected static ?string $model = Subscriber::class;
 
-    protected static ?string $navigationIcon = 'heroicon-m-bookmark';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Section::make('Faq Details')
-                    ->schema([
-                        Forms\Components\TextInput::make('title')
-                            ->required(),
-                        Forms\Components\MarkdownEditor::make('description')
-                            ->required()
-                            ->columnSpanFull(),
-                        Forms\Components\ToggleButtons::make('status')
-                            ->inline()
-                            ->options(FaqStatus::class)
-                            ->required(),
-                    ]),
-
+                Forms\Components\TextInput::make('name')
+                    ->required(),
+                Forms\Components\TextInput::make('email')
+                    ->email()
+                    ->required(),
+                Forms\Components\TextInput::make('status')
+                    ->required(),
             ]);
     }
 
@@ -41,10 +37,12 @@ class FaqResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
+                Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('status')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -81,9 +79,9 @@ class FaqResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListFaqs::route('/'),
-            'create' => Pages\CreateFaq::route('/create'),
-            'edit' => Pages\EditFaq::route('/{record}/edit'),
+            'index' => Pages\ListSubscribers::route('/'),
+            'create' => Pages\CreateSubscriber::route('/create'),
+            'edit' => Pages\EditSubscriber::route('/{record}/edit'),
         ];
     }
 }

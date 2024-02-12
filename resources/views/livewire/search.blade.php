@@ -1,6 +1,6 @@
 <div class="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-6">
-    <div class="flex items-center px-6 py-4 md:mx-auto md:max-w-3xl lg:mx-0 lg:max-w-none xl:px-0">
-        <div class="w-1/2">
+    <div class="flex items-center px-6 py-4 md:mx-auto lg:mx-0 lg:max-w-none xl:px-0">
+        <div class="w-full">
             <label for="search" class="sr-only">Search</label>
             <div class="relative " x-data="{
                 searchJobs(event) {
