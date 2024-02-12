@@ -21,7 +21,7 @@ class AdvertWidget extends BaseWidget
                 ->description('Total adverts')
                 ->chart([17, 2, 30, 3, 15, 4, 17])
                 ->color('info'),
-                Stat::make('Institution', Institution::count())
+            Stat::make('Institution', Institution::count())
                 ->description('Total institutions')
                 ->chart([17, 2, 0, 3, 15, 4, 17])
                 ->color('warning'),

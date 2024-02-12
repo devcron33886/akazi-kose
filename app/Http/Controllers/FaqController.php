@@ -12,7 +12,8 @@ class FaqController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $faqs=Faq::where('is_active',1)->get();
-        return view('faq',compact('faqs'));
+        $faqs = Faq::where('status', '=', 'published')->get();
+
+        return view('faq', compact('faqs'));
     }
 }

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Faq extends Model
 {
-    use HasFactory, SoftDeletes,Sluggable;
+    use HasFactory, Sluggable,SoftDeletes;
 
     protected $guraded = [];
 
@@ -18,12 +18,12 @@ class Faq extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
-            ]
+                'source' => 'title',
+            ],
         ];
     }
 
-    public static function booted():void
+    public static function booted(): void
     {
         static::addGlobalScope(new FaqScope);
     }

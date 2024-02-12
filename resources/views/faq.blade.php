@@ -23,27 +23,27 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen bg-white dark:bg-gray-900">
         <x-menu-component />
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <livewire:search />
+
                 <div class="container mx-auto flex flex-wrap py-6">
 
                     <!-- Posts Section -->
                     <section class="w-full md:w-2/3 flex flex-col items-center px-3">
 
-                        @foreach($faqs as $faq)
+                        @foreach ($faqs as $faq)
                             <div class="mt-2">
 
-                                <div  class="block max-w-sm p-6 bg-white border border-blue-600 rounded-lg md:max-w-4xl">
+                                <div class="block max-w-sm p-6 bg-white border border-blue-600 rounded-lg md:max-w-4xl">
 
-                                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $faq->title}}</h5>
-                                <p class="font-normal text-gray-700 dark:text-gray-400">{{ $faq->description }}</p>
+                                    <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                                        {{ $faq->title }}</h5>
+                                    <p class="font-normal text-gray-700 dark:text-gray-400">{{ $faq->description }}</p>
                                 </div>
                             </div>
-
                         @endforeach
                     </section>
 
@@ -54,30 +54,32 @@
                             <p class="text-xl font-semibold capitalize pb-5">
                                 Subscribe to our Newsletter
                             </p>
-                            
+
                             <form action="" method="POST" autocomplete="off">
                                 @csrf
                                 <div>
                                     <x-input-label class="required" for="name" :value="__('Name')" />
-                                    <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="off" />
+                                    <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
+                                        :value="old('name')" required autofocus autocomplete="off" />
                                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                 </div>
 
                                 <!-- Email Address -->
                                 <div class="mt-4">
                                     <x-input-label class="required" for="email" :value="__('Email')" />
-                                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="off" />
+                                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+                                        :value="old('email')" required autocomplete="off" />
                                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                 </div>
                             </form>
-                            
+
                         </div>
                     </aside>
                 </div>
             </div>
         </div>
     </div>
-    <x-footer-component/>
+    <x-footer-component />
 </body>
 
 </html>

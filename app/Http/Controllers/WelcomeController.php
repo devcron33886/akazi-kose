@@ -13,6 +13,7 @@ class WelcomeController extends Controller
     public function __invoke()
     {
         $adverts = Advert::where('category_id', 1)->get();
-        return view('welcome',['adverts'=>$adverts]);
+
+        return view('welcome', ['adverts' => $adverts]);
     }
 }

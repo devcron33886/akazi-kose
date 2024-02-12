@@ -5,7 +5,6 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmployerIndexController;
 use App\Http\Controllers\FaqController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowEmployerController;
 use App\Http\Controllers\StoreContactController;
 use App\Http\Controllers\WelcomeController;
