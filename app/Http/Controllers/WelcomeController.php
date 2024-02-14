@@ -12,7 +12,7 @@ class WelcomeController extends Controller
      */
     public function __invoke()
     {
-        $adverts = Advert::where('category_id', 1)->get();
+        $adverts = Advert::inRandomOrder()->take(12)->get();
 
         return view('welcome', ['adverts' => $adverts]);
     }
