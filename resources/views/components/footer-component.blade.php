@@ -103,7 +103,7 @@
         <div class="mt-8 border-t border-white pt-8 md:flex md:items-center md:justify-between">
             <div class="flex space-x-6 md:order-2">
 
-                <a href="#" class="text-white hover:text-black">
+                <a href="{{ route('privacy')}}" class="text-white hover:text-black">
                     Privacy and Policy
                 </a>
 
