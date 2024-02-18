@@ -24,7 +24,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="relative isolate bg-white">
+    <div class="relative isolate bg-gray-100">
         <x-menu-component />
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 grid  grid-cols-1 lg:grid-cols-2">

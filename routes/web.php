@@ -7,6 +7,7 @@ use App\Http\Controllers\EmployerIndexController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ShowEmployerController;
 use App\Http\Controllers\StoreContactController;
+use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,5 +29,7 @@ Route::get('/job/{job:slug}', AdvertController::class)->name('adverts.show');
 Route::get('/jobs/{category:slug}', CategoryController::class)->name('category.show');
 Route::get('/contact-us', ContactController::class)->name('contact.index');
 Route::post('/contact', StoreContactController::class)->name('contact.store');
+Route::post('/subscribe', SubscriberController::class)->name('subscriber');
 Route::get('/faqs', FaqController::class)->name('faqs');
 Route::view('/about-us', 'about.index')->name('about-us');
+Route::view('/privacy-and-policy', 'privacy-and-policy')->name('privacy');

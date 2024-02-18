@@ -23,7 +23,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-white dark:bg-gray-900">
+    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
         <x-menu-component />
 
         <div class="py-12">
@@ -51,11 +51,37 @@
                     <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
 
                         <div class="w-full bg-white shadow-sm rounded-md flex flex-col my-4 p-6">
-                            <p class="text-xl font-semibold capitalize pb-5">
+                            <p class="text-md font-semibold uppercase pb-5">
                                 Subscribe to our Newsletter
                             </p>
+                            @if (session()->has('success'))
+                                <div class="space-x-6">
 
-                            <form action="" method="POST" autocomplete="off">
+                                    <div class="rounded-md bg-green-50 p-4">
+                                        <div class="flex">
+                                            <div class="flex-shrink-0">
+                                                <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20"
+                                                    fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd"
+                                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <h3 class="text-sm font-medium text-green-800">You have subscribed to
+                                                    our newsletter
+                                                </h3>
+                                                <div class="mt-2 text-sm text-green-700">
+                                                    <p>Thank you.</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+
+                            <form action="{{ route('subscriber') }}" method="POST" autocomplete="off">
                                 @csrf
                                 <div>
                                     <x-input-label class="required" for="name" :value="__('Name')" />
@@ -70,6 +96,13 @@
                                     <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
                                         :value="old('email')" required autocomplete="off" />
                                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                </div>
+                                <div class="flex items-center justify-end mt-4">
+
+
+                                    <x-primary-button class="ms-3">
+                                        {{ __('Subscribe') }}
+                                    </x-primary-button>
                                 </div>
                             </form>
 
