@@ -37,7 +37,8 @@
                         <article class="flex flex-col shadow-sm my-4">
                             <div class="bg-white flex flex-col rounded-md justify-start p-6">
 
-                                <h1 class="py-4 text-pretty text-left font-bold text-2xl">{{ $advert->title }}</h1>
+                                <h1 class="py-4 text-pretty text-left font-bold text-2xl">{{ $advert->title ?? '-' }}
+                                </h1>
                                 <p class="pb-6">{!! $advert->body !!}</p>
 
                             </div>
@@ -49,37 +50,37 @@
 
                         <div class="w-full bg-white shadow-sm rounded-md flex flex-col my-4 p-6">
                             <p class="text-xl font-semibold capitalize pb-5">
-                                {{ $advert->category->name }} Summary
+                                {{ $advert->category->name ?? '-' }} Summary
                             </p>
                             <div class="overflow-hidden rounded-md bg-white shadow">
                                 <ul role="list" class="divide-y divide-gray-200">
                                     <li class="px-6 py-4">
-                                        Location: {{ $advert->location }}
+                                        Location: {{ $advert->location ?? '-' }}
                                     </li>
                                     <li class="px-6 py-4">
-                                        Sector: {{ $advert->sector }}
+                                        Sector: {{ $advert->sector ?? '-' }}
                                     </li>
                                     <li class="px-6 py-4">
-                                        Education level: {{ $advert->eductaion_level }}
+                                        Education level: {{ $advert->eductaion_level ?? '-' }}
                                     </li>
                                     <li class="px-6 py-4">
-                                        Experience: {{ $advert->desired_experience }}
+                                        Experience: {{ $advert->desired_experience ?? '-' }}
                                     </li>
                                     <li class="px-6 py-4">
-                                        Email: {{ $advert->institution->email }}
+                                        Email: {{ $advert->institution->email ?? '-' }}
                                     </li>
                                     <li class="px-6 py-4">
-                                        Contract Type: {{ $advert->contract_type }}
+                                        Contract Type: {{ $advert->contract_type ?? '-' }}
                                     </li>
                                     <li class="px-6 py-4">
-                                        Available positions: {{ $advert->number_of_positions }}
+                                        Available positions: {{ $advert->number_of_positions ?? '-' }}
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="w-full bg-white shadow-sm rounded-md flex flex-col my-4 p-6">
                             <p class="text-xl font-semibold pb-5 capitalize">
-                                Related {{ $advert->category->name }}
+                                Related {{ $advert->category->name ?? '-' }}
                             </p>
                             <ul role="list" class="divide-y divide-gray-100">
 
