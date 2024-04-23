@@ -38,7 +38,7 @@
                 src="{{ asset('images/akazikose.jpg') }}" alt="" />
         </div>
         <div class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
-            <div class="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
+            <div class="mb-8 lg:my-20 lg:max-w-lg lg:pr-5">
 
                 <h2 class="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
                     Welcome to akazikose.com,<br class="hidden md:block" />
@@ -73,26 +73,23 @@
                     </ul>
                 </div>
                 @foreach ($adverts as $advert)
-                    <div class="mt-4">
-                        <a href="{{ route('adverts.show', $advert->slug) }}"
-                            class="flex flex-col items-center bg-white border border-blue-600 rounded-lg md:flex-row md:max-w-full">
-                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-                                src="/storage/{{ $advert->institution->logo ?? '-' }}"
-                                alt="{{ $advert->institution->name ?? '-' }}">
-                            <div class="flex flex-col justify-between p-4 leading-normal">
-                                <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                                    {{ $advert->title ?? '-' }}</h5>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                    {{ $advert->institution->name ?? '-' }}| Location: {{ $advert->location ?? '-' }}|
-                                    Published on: {{ $advert->formatted_date ?? '-' }}| Deadline:
-                                    {{ $advert->formatted_deadline ?? '-' }}| Experience:
-                                    {{ $advert->desired_experience ?? 'Not specified' }} </p>
-                                <div class="max-w-2xl">
-                                    <span
-                                        class="inline-block px-2 py-1 text-xs font-semibold text-white bg-blue-500 rounded">{{ $advert->category->name ?? '-' }}</span>
-                                </div>
+                    <div class="mt-4 sm:px-4">
+                        <div class="flex flex-col bg-white border border-blue-500 rounded-lg px-4 py-2 md:flex-row sm:flex-row">
+                            <div class="md:mr-4 mb-2 md:mb-0">
+                                <img src="/storage/{{ $advert->institution->logo ?? '-' }}" alt="{{ $advert->institution->name ?? '-' }}" class="h-12">
                             </div>
-                        </a>
+                            <div class="flex-1">
+                                <h2 class="text-md font-semibold text-blue-600 mb-1">{{ $advert->title ?? '-'}}</h2>
+                                <p class="text-gray-900">
+                                    {{ $advert->institution->name ?? '-' }}|
+                                    {{ $advert->location ?? '-'}}| Published on: {{ $advert->formatted_date ?? '-' }}| Deadline:
+                                    {{ $advert->formatted_deadline ?? '-' }}| Experience:
+                                    {{ $advert->desired_experience ?? 'Not specified' }}
+                                </p>
+                                <span
+                                        class="inline-block px-2 py-1 text-xs font-semibold text-white bg-blue-500 rounded">{{ $advert->category->name ?? '-' }}</span>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
             </div>
