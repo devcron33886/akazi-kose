@@ -76,7 +76,7 @@
                     <div class="mt-4 sm:px-4">
                         <div class="flex flex-col bg-white border border-blue-500 rounded-lg px-4 py-2 md:flex-row sm:flex-row">
                             <div class="md:mr-4 mb-2 md:mb-0">
-                                <img src="/storage/{{ $advert->institution->logo ?? '-' }}" alt="{{ $advert->institution->name ?? '-' }}" class="h-12">
+                                <img src="/storage/{{ $advert->institution->logo ?? '-' }}" alt="{{ $advert->institution->name ?? '-' }}" class="h-12 object-cover h-auto">
                             </div>
                             <div class="flex-1">
                                 <h2 class="text-md font-semibold text-blue-600 mb-1">{{ $advert->title ?? '-'}}</h2>
