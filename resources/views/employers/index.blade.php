@@ -30,9 +30,7 @@
 
         <div class="py-24">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="w-1/2">
-                    <livewire:search />
-                </div>
+                
                 <div role="list" class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
                     @foreach ($instutions as $instution)
                         <a href="{{ route('employers.show', $instution->slug) }}"

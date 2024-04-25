@@ -34,7 +34,12 @@ class CategorySeeder extends Seeder
             ],
             [
                 'name' => 'Public',
-                'slug' => 'Public',
+                'slug' => 'public',
+                'visible' => true,
+            ],
+            [
+                'name' => 'Auction',
+                'slug' => 'auction',
                 'visible' => true,
             ],
             [

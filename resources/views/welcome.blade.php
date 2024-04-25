@@ -34,8 +34,8 @@
                 viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
                 <path d="M50 0H100L50 100H0L50 0Z"></path>
             </svg>
-            <img class="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
-                src="{{ asset('images/akazikose.jpg') }}" alt="" />
+            <img class="object-cover w-full h-46 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-46 lg:h-full"
+                src="{{ asset('images/akazi-kose.webp') }}" alt="" />
         </div>
         <div class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
             <div class="mb-8 lg:my-20 lg:max-w-lg lg:pr-5">
@@ -56,7 +56,7 @@
     </div>
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="py-6 w-full max-w-screen-xl mx-auto">
+            <div class="py-6 px-2 w-full max-w-screen-xl mx-auto">
                 <div class="overflow-hidden rounded-md border border-blue-500 bg-blue-500 p-1">
                     <ul class="flex items-center gap-2 text-sm font-medium">
                         @foreach ($categories as $category)
@@ -74,20 +74,23 @@
                 </div>
                 @foreach ($adverts as $advert)
                     <div class="mt-4 sm:px-4">
-                        <div class="flex flex-col bg-white border border-blue-500 rounded-lg px-4 py-2 md:flex-row sm:flex-row">
-                            <div class="md:mr-4 mb-2 md:mb-0">
-                                <img src="/storage/{{ $advert->institution->logo ?? '-' }}" alt="{{ $advert->institution->name ?? '-' }}" class="object-cover w-full rounded-t-lg h-48 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg">
+                        <div class="flex items-center bg-white p-4 rounded-lg shadow-none border border-blue-500">
+                            <div class="mr-4">
+                                <img src="person.jpg" alt="Person" class="w-20 h-20 rounded-full object-cover">
                             </div>
-                            <div class="flex-1">
-                                <h2 class="text-md font-semibold text-blue-600 mb-1">{{ $advert->title ?? '-'}}</h2>
-                                <p class="text-gray-900">
-                                    {{ $advert->institution->name ?? '-' }}|
-                                    {{ $advert->location ?? '-'}}| Published on: {{ $advert->formatted_date ?? '-' }}| Deadline:
-                                    {{ $advert->formatted_deadline ?? '-' }}| Experience:
-                                    {{ $advert->desired_experience ?? 'Not specified' }}
-                                </p>
-                                <span
-                                        class="inline-block px-2 py-1 text-xs font-semibold text-white bg-blue-500 rounded">{{ $advert->category->name ?? '-' }}</span>
+                            <div>
+                                <h5 class="mb-2 text-md font-semibold tracking-tight text-gray-900 dark:text-white">
+                                    {{ $advert->title ?? '-' }}</h5>
+                                <blockquote class="text-md sm:text-sm text-gray-900 hidden md:block">
+                                        {{ $advert->institution->name ?? '-' }}| Location: {{ $advert->location ?? '-' }}|
+                                        Published on: {{ $advert->formatted_date ?? '-' }}| Deadline:
+                                            {{ $advert->formatted_deadline ?? '-' }}| Experience:
+                                            {{ $advert->desired_experience ?? 'Not specified' }}  
+                                </blockquote>
+                                <div class="mt-2 text-gray-600">
+                                    <span
+                                        class="inline-block px-2 py-1 text-xs font-semibold text-white bg-blue-500 rounded">{{ $advert->category->name }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,7 +99,6 @@
         </div>
     </div>
     <x-footer-component />
-
 </body>
 
 </html>

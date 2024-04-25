@@ -33,6 +33,9 @@
 
                     <!-- Posts Section -->
                     <section class="w-full md:w-2/3 flex flex-col items-center px-3">
+                        <h1 class="py-4 text-pretty text-left font-bold text-3xl">
+                            Top questions and answers below form our beloved customers and partners
+                        </h1>
 
                         @foreach ($faqs as $faq)
                             <div class="mt-2">

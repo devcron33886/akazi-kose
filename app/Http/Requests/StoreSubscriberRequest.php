@@ -26,7 +26,7 @@ class StoreSubscriberRequest extends FormRequest
 
             'name' => ['required', 'string', 'max:255'],
 
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . Subscriber::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.Subscriber::class],
 
         ];
     }
