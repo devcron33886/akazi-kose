@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('desired_experience')->nullable();
             $table->string('contract_type')->nullable();
             $table->integer('number_of_positions');
-            $table->string('files')->nullable();
+            $table->foreignId('user_id')->index()->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -5,9 +5,9 @@ namespace App\Filament\Resources\InstitutionResource\Pages;
 use App\Filament\Resources\InstitutionResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use pxlrbt\FilamentExcel\Actions\Pages\ExportAction;
 use pxlrbt\FilamentExcel\Columns\Column;
 use pxlrbt\FilamentExcel\Exports\ExcelExport;
-use pxlrbt\FilamentExcel\Actions\Pages\ExportAction;
 
 class ListInstitutions extends ListRecords
 {

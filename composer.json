@@ -20,6 +20,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4",
+        "opcodesio/log-viewer": "^3.8",
         "psr/simple-cache": "^2.0",
         "pxlrbt/filament-excel": "^2.3"
     },

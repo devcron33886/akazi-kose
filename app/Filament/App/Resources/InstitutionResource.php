@@ -1,21 +1,23 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\App\Resources;
 
-use App\Filament\Resources\InstitutionResource\Pages;
+use App\Filament\App\Resources\InstitutionResource\Pages;
+use App\Filament\App\Resources\InstitutionResource\RelationManagers;
 use App\Models\Institution;
 use Filament\Forms;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class InstitutionResource extends Resource
 {
     protected static ?string $model = Institution::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-building-office';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
@@ -23,10 +25,8 @@ class InstitutionResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required(),
-                SpatieMediaLibraryFileUpload::make('logo')
-                    ->collection('logos')
-                    ->conversion('preview')
-                    ->responsiveImages(),
+                Forms\Components\TextInput::make('slug')
+                    ->required(),
                 Forms\Components\Textarea::make('about')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('phone_number')
@@ -35,7 +35,6 @@ class InstitutionResource extends Resource
                 Forms\Components\TextInput::make('second_phone_number')
                     ->tel(),
                 Forms\Components\TextInput::make('website')
-                    ->url()
                     ->required(),
                 Forms\Components\TextInput::make('address')
                     ->required(),
@@ -48,7 +47,13 @@ class InstitutionResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('slug')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('phone_number')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('second_phone_number')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('website')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('address')
                     ->searchable(),
@@ -70,7 +75,6 @@ class InstitutionResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

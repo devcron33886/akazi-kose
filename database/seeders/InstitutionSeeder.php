@@ -19,7 +19,7 @@ class InstitutionSeeder extends Seeder
                 'about' => 'ADRA the global humanitarian arm of the Seventh-day Adventist Church—part of the 20-million strong Adventist community, with hundreds of thousands of churches globally and the world’s largest integrated healthcare and education network.',
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
-                'email' => 'P8XUe@example.com',
+                'website' => 'https://example.com',
                 'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Higher Education',
@@ -27,7 +27,7 @@ class InstitutionSeeder extends Seeder
                 'about' => 'The Rwanda Ministry of Higher Education is a 501(c)3 charitable trust with the mission of providing quality higher education to Rwanda.',
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
-                'email' => 'P8XUe@example.com',
+                'website' => 'https://example.com',
                 'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Education',
@@ -35,7 +35,7 @@ class InstitutionSeeder extends Seeder
                 'about' => 'The Rwanda Ministry of Education is a 501(c)3 charitable trust with the mission of providing quality education to Rwanda.',
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
-                'email' => 'P8XUe@example.com',
+                'website' => 'https://example.com',
                 'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Health',
@@ -43,7 +43,7 @@ class InstitutionSeeder extends Seeder
                 'about' => 'The Rwanda Ministry of Health is a 501(c)3 charitable trust with the mission of providing quality health care to Rwanda.',
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
-                'email' => 'P8XUe@example.com',
+                'website' => 'https://example.com',
                 'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Defense',
@@ -51,7 +51,7 @@ class InstitutionSeeder extends Seeder
                 'about' => 'The Rwanda Ministry of Culture and Education is a 501(c)3 charitable trust with the mission of providing quality culture and education to Rwanda.',
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
-                'email' => 'P8XUe@example.com',
+                'website' => 'https://example.com',
                 'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Finance',
@@ -59,7 +59,7 @@ class InstitutionSeeder extends Seeder
                 'about' => 'The Rwanda Ministry of Finance is a 501(c)3 charitable trust with the mission of providing quality finance to Rwanda.',
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
-                'email' => 'P8XUe@example.com',
+                'website' => 'https://example.com',
                 'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Energy',
@@ -67,7 +67,7 @@ class InstitutionSeeder extends Seeder
                 'about' => 'The Rwanda Ministry of Culture and Education is a 501(c)3 charitable trust with the mission of providing quality culture and education to Rwanda.',
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
-                'email' => 'P8XUe@example.com',
+                'website' => 'https://example.com',
                 'address' => 'Kigali, Rwanda',
             ],
             [
@@ -76,7 +76,7 @@ class InstitutionSeeder extends Seeder
                 'about' => 'The Rwanda Ministry of Culture and Education is a 501(c)3 charitable trust with the mission of providing quality culture and education to Rwanda.',
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
-                'email' => 'P8XUe@example.com',
+                'website' => 'https://example.com',
                 'address' => 'Kigali, Rwanda',
             ],
             [
@@ -85,7 +85,7 @@ class InstitutionSeeder extends Seeder
                 'about' => 'The Rwanda Ministry of Culture and Education is a 501(c)3 charitable trust with the mission of providing quality culture and education to Rwanda.',
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
-                'email' => 'P8XUe@example.com',
+                'website' => 'https://example.com',
                 'address' => 'Kigali, Rwanda',
             ], [
                 'name' => 'Rwanda Ministry of Sanitation',
@@ -93,7 +93,7 @@ class InstitutionSeeder extends Seeder
                 'about' => 'The Rwanda Ministry of Education is a 501(c)3 charitable trust with the mission of providing quality education to Rwanda.',
                 'phone_number' => '+250 780 000 000',
                 'second_phone_number' => '+250 780 000 000',
-                'email' => 'P8XUe@example.com',
+                'website' => 'https://example.com',
                 'address' => 'Kigali, Rwanda',
             ],
 
