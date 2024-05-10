@@ -74,10 +74,10 @@
                 </div>
                 @foreach ($adverts as $advert)
                     <div class="mt-4 sm:px-4">
-                        <div class="flex items-center bg-white p-4 rounded-lg shadow-none border border-blue-500">
+                        <a href="{{ route('adverts.show', $advert->slug) }}" target="__blank" class="flex items-center bg-white p-4 rounded-lg shadow-none border border-blue-500">
                             <div class="mr-4">
                                
-                                <img src="/storage/{{ $advert->institution->logo }}" alt="{{ $advert->institution->name}}" class="w-20 h-20 rounded-full object-cover">
+                                <img src="/storage/{{ $advert->institution->logo }}" alt="{{ $advert->institution->name}}" class="w-full h-20 object-cover">
                                 
                             </div>
                             <div>
@@ -94,7 +94,7 @@
                                         class="inline-block px-2 py-1 text-xs font-semibold text-white bg-blue-500 rounded">{{ $advert->category->name }}</span>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
