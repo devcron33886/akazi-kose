@@ -151,9 +151,6 @@ class AdvertResource extends Resource
 
                 ->required()
                 ->numeric(),
-            Forms\Components\FileUpload::make('files')
-
-                ->multiple(),
         ];
     }
 }
