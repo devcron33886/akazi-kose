@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\InstitutionResource\Pages;
 use App\Models\Institution;
 use Filament\Forms;
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -23,10 +22,8 @@ class InstitutionResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required(),
-                SpatieMediaLibraryFileUpload::make('logo')
-                    ->collection('logos')
-                    ->conversion('preview')
-                    ->responsiveImages(),
+                Forms\Components\FileUpload::make('logo')->image()
+                    ->required(),
                 Forms\Components\Textarea::make('about')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('phone_number')

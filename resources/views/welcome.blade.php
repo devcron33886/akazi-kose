@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=be-vietnam-pro:400,500,600,700" rel="stylesheet" />
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css'])
 
 </head>
 
@@ -76,7 +76,9 @@
                     <div class="mt-4 sm:px-4">
                         <div class="flex items-center bg-white p-4 rounded-lg shadow-none border border-blue-500">
                             <div class="mr-4">
-                                <img src="person.jpg" alt="Person" class="w-20 h-20 rounded-full object-cover">
+                               
+                                <img src="/storage/{{ $advert->institution->logo }}" alt="{{ $advert->institution->name}}" class="w-20 h-20 rounded-full object-cover">
+                                
                             </div>
                             <div>
                                 <h5 class="mb-2 text-md font-semibold tracking-tight text-gray-900 dark:text-white">

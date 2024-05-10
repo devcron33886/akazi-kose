@@ -9,7 +9,7 @@
                 <ul class="mt-4">
                     <li class="text-white py-2">Address: {{ $settings->address }}</li>
                     <li class="text-white py-2">Phone: {{ $settings->phone }}</li>
-                    <li class="text-white py-2">Whatsapp: {{ $settings->whatsapp }}</li>
+                    <li class="text-white py-2">Whatsapp: {{ $settings->phone }}</li>
                     <li class="text-white py-2">E-mail: {{ $settings->email }}</li>
                 </ul>
                 <div class="flex space-x-6 md:order-2 mt-2">

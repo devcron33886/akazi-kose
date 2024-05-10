@@ -17,6 +17,11 @@ class UsersSeeder extends Seeder
                 'email' => 'admin@admin.com',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             ],
+            [
+                'name' => 'User',
+                'email' => 'user@user.com',
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password]
+            ],
         ];
         foreach ($users as $user) {
             \App\Models\User::create($user);

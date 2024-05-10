@@ -29,7 +29,7 @@ class AppPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Green,
             ])
-             ->brandLogo('/images/Logo.png')
+            ->brandLogo('/images/Logo.png')
             ->spa()
             ->topNavigation()
             ->viteTheme('resources/css/filament/admin/theme.css')

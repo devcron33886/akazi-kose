@@ -33,6 +33,7 @@ class AdvertFactory extends Factory
             'desired_experience' => fake()->word(),
             'contract_type' => fake()->randomElement(['Full-Time', 'Part-Time', 'Freelance', 'Contract', 'Internship', 'Apprenticeship']),
             'number_of_positions' => $this->faker->numberBetween(1, 10),
+            'user_id' => fake()->numberBetween(1, 2),
 
         ];
     }

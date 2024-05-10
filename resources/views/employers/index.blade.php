@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=be-vietnam-pro:400,500,600,700" rel="stylesheet" />
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css'])
 
 </head>
 
@@ -32,20 +32,18 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 
                 <div role="list" class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-                    @foreach ($instutions as $instution)
-                        <a href="{{ route('employers.show', $instution->slug) }}"
-                            class="flex flex-col items-center bg-white border border-blue-600 rounded-lg shadow md:flex-row md:max-w-xl">
-                            <img class="object-cover w-full rounded-t-lg h-86 md:h-auto md:w-40 md:rounded-none md:rounded-s-lg"
-                                src="storage/{{ $instution->logo }}" alt="{{ $instution->name }}">
+                    @foreach ($institutions as $institution)
+                        <a href="{{ route('employers.show', $institution->slug) }}" class="flex flex-col items-center bg-white border border-blue-600 rounded-lg shadow md:flex-row md:max-w-xl">
+                           
+                            <img class="object-cover w-full rounded-t-lg h-86 md:h-auto md:w-40 md:rounded-none md:rounded-l-lg" src="/storage/{{ $institution->logo }}" alt="{{ $institution->name }}">
+                            
                             <div class="flex flex-col justify-between p-4 leading-normal">
-                                <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">
-                                    {{ $instution->name }}</h5>
-
+                                <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">{{ $institution->name }}</h5>
                             </div>
                         </a>
                     @endforeach
                 </div>
-                {{ $instutions->links() }}
+                {{ $institutions->links() }}
             </div>
         </div>
     </div>

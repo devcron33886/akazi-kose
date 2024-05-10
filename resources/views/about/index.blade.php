@@ -49,7 +49,43 @@
                             <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
                                 <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">We are here for you!</h1>
                                 <p class="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                                    {{ $settings->about }}</p>
+                                   Akazikose is a privately held company providing services in the area of Jobs Listing, Career Guidance, CV writing, Job search skills and Headhunting Our main mission is to facilitate connection between opportunity seekers and employers in Rwanda using online technologies. 
+                               </p>
+                                <h4 class="relative mt-6 font-bold text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">Jobs Listing</h4>
+
+<p class="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">Comprehensive database of job openings across Rwanda Real-time updates on new job postings to stay ahead in your job search User-friendly interface for easy navigation </p>
+<h4 class="relative mt-6 font-bold text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+Career Guidance</h4>
+<p class="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+Expert advice and resources to help you navigate your career path
+Guidance on professional development, including skill-building workshops and courses
+Tips and strategies for networking, personal branding, and career advancement
+</p>
+<h4 class="relative mt-6 font-bold text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+CV Writing
+</h4>
+<p class="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+Professional CV editing and proofreading services to create a standout resume
+Tailored advice on crafting compelling CVs that highlight your skills and experience
+Tips on optimizing your CV for applicant tracking systems (ATS) to increase visibility to employers
+</p>
+<h4 class="relative mt-6 font-bold text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+Job Search Skills
+</h4>
+<p class="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+Training modules and resources to enhance your job search skills
+Strategies for preparing for interviews, including mock interview sessions and interview question guides
+Insights into industry trends and market demand to inform your job search strategy
+</p>
+<h4 class="relative mt-6 font-bold text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+Headhunting
+</h4>
+<p class="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
+Access to a network of top talent across various industries and professions
+Customized headhunting services to match employers with qualified candidates
+Comprehensive candidate screening and assessment process to ensure quality matches 
+</p>
+                                </p>
                             </div>
                             <div
                                 class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
