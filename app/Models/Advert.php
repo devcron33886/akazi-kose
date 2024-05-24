@@ -3,16 +3,18 @@
 namespace App\Models;
 
 use App\Models\Scopes\AdvertScope;
+use App\Models\Traits\Multitenantable;
 use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Advert extends Model
 {
-    use HasFactory, Sluggable, SoftDeletes;
+    use HasFactory, Multitenantable, Sluggable, SoftDeletes;
 
     protected $guarded = [];
 
@@ -48,5 +50,10 @@ class Advert extends Model
     public static function booted(): void
     {
         static::addGlobalScope(new AdvertScope);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

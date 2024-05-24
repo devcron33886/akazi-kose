@@ -54,6 +54,9 @@ class AdvertResource extends Resource
                 Tables\Columns\TextColumn::make('number_of_positions')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label('Posted by')
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
